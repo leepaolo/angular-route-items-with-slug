@@ -1,0 +1,5 @@
+<section>
+  <div *ngFor="let shoe of shoesList?.shoes" (click)="onSelectShoe(shoe)">
+    {{ shoe.name }} - ${{ shoe.price }}
+  </div>
+</section>
