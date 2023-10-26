@@ -18,7 +18,7 @@ export class NikeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.shoesService.getShoes().subscribe((data) => {
+    this.shoesService.getShoesList().subscribe((data) => {
       this.shoesList = data;
     });
   }

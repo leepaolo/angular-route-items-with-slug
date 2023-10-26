@@ -1,5 +1,7 @@
 <section>
   <div *ngFor="let shoe of shoesList?.shoes" (click)="onSelectShoe(shoe)">
-    {{ shoe.name }} - ${{ shoe.price }}
+    <img [src]="shoe.image" alt="{{ shoe.name }}" />
+    <p>{{ shoe.name }}</p>
+    <p>${{ shoe.price }}</p>
   </div>
 </section>

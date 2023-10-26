@@ -18,14 +18,14 @@ export class ShoesService {
   constructor(private readonly http: HttpClient) {}
 
   // SLUG SNIPPET
-  findShoeBySlug(slug: string | null): IShoe | null {
+  slugify(slug: string | null): IShoe | null {
     const foundShoes = this.localShoeArray.filter(
       (shoe) => generateSlug(shoe.name) === slug
     );
     return foundShoes.length ? foundShoes[0] : null;
   }
 
-  getShoes(): Observable<IShoesCollection> {
+  getShoesList(): Observable<IShoesCollection> {
     return this.http.get<IShoesCollection>(this.SHOES_URL).pipe(
       tap((data: IShoesCollection) => {
         this.localShoeArray = data.shoes;

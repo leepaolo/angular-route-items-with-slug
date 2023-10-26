@@ -19,7 +19,7 @@ export class NikeDettComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       const shoeSlug = params.get('slug');
-      this.selectedShoe = this.shoesService.findShoeBySlug(shoeSlug);
+      this.selectedShoe = this.shoesService.slugify(shoeSlug);
     });
   }
 }
